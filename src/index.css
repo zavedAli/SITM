@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.sidebar-container {
+  position: relative;
+  width: 13%; /* Adjust to your layout */
+  transition: position 0.3s ease-in-out;
+}
+
+.fixed-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 30;
+  background-color: white; /* Optional */
+}
+
+.content-container {
+  width: calc(100% - 13%); /* Adjust according to your layout */
+  margin-left: 13%; /* Sidebar width */
+}
