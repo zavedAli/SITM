@@ -54,7 +54,7 @@ const WordsOfWisdom = () => {
           </div>
           {/* Content Section */}
           <div>
-            <p className="text-gray-600 mb-4 text-justify line-clamp-[7]">
+            <p className="text-gray-600 mb-4 text-justify  line-clamp-[7]">
               Beloved Students and Respected Parents, Whole Hearted greeting to
               all my beloved students and their respected parents for choosing
               this SITM for their future building institution. This institution

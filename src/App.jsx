@@ -52,12 +52,12 @@ const App = () => {
               <Hero />
             </section>
           </div>
-          <div className="ml-0 md:ml-64 p-6">
+          <div className="ml-0 md:ml-64 p-6 ">
             <section id="WordsOfWisdom">
               <WordsOfWisdom />
             </section>
           </div>
-          <div className="ml-0 md:ml-36 p-6">
+          <div className="ml-0 md:ml-36 p-6 ">
             <section id="Facilities" className="mt-8">
               <Facilities />
             </section>
