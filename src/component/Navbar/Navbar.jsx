@@ -1,22 +1,20 @@
 import React, { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { TbMenuDeep } from "react-icons/tb";
+import Logo from "../../assets/logo-sitm.png";
+import { FaChevronDown } from "react-icons/fa";
+import { FaChevronUp } from "react-icons/fa";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-rust-200 text-white shadow-md">
+    <header className="bg-rust-200 text-white shadow-md relative">
       <div className="max-w-7xl mx-auto flex justify-between items-center py-3 px-4 md:px-8">
         {/* Logo */}
-        <div className="flex items-center space-x-3">
-          <img
-            src="https://sitmguwahati.org/images/logo-white-copy.png?V=1"
-            alt="Logo"
-            className="w-10 h-10"
-          />
-          <h1 className="text-xl font-bold">SCHOLAR'S INSTITUTE</h1>
+        <div className="flex items-center space-x-3 z-50">
+          <img src={Logo} alt="Logo" className="md:w-42 md:h-14 w-38 h-12" />
         </div>
 
         {/* Desktop Menu */}
@@ -41,9 +39,12 @@ const Navbar = () => {
           <div className="relative">
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="hover:text-gray-300"
+              className="hover:text-gray-300 flex gap-1 items-center"
             >
               More
+              <span className="scale-75 pt-1">
+                {!isDropdownOpen ? <FaChevronDown /> : <FaChevronUp />}
+              </span>
             </button>
             {isDropdownOpen && (
               <div className="absolute right-0 mt-2 w-40 bg-white text-black rounded-md shadow-lg z-40">
@@ -72,52 +73,72 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden focus:outline-none"
+          className="md:hidden focus:outline-none z-50"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {!isMobileMenuOpen ? <TbMenuDeep /> : <IoMdClose />}
+          {!isMobileMenuOpen ? (
+            <TbMenuDeep size={24} />
+          ) : (
+            <IoMdClose size={24} />
+          )}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Overlay */}
       {isMobileMenuOpen && (
-        <nav className="md:hidden bg-rust-200">
-          <a href="#home" className="block px-4 py-2 hover:bg-rust-300">
+        <div
+          className="fixed inset-0 bg-black opacity-50 z-30"
+          onClick={() => setIsMobileMenuOpen(false)}
+        ></div>
+      )}
+
+      {/* Mobile Menu */}
+      <div
+        className={`absolute top-[70px] left-0 w-full bg-rust-200 overflow-hidden transition-[max-height] duration-300 ease-in-out ${
+          isMobileMenuOpen ? "max-h-96" : "max-h-0"
+        } shadow-md`}
+        style={{ zIndex: 40 }}
+      >
+        <nav className="md:hidden mb-7">
+          <a href="#home" className="block px-4 py-2 hover:bg-[#b9445b]">
             Home
           </a>
-          <a href="#about" className="block px-4 py-2 hover:bg-rust-300">
+          <a href="#about" className="block px-4 py-2 hover:bg-[#b9445b]">
             About
           </a>
-          <a href="#departments" className="block px-4 py-2 hover:bg-rust-300">
+          <a href="#departments" className="block px-4 py-2 hover:bg-[#b9445b]">
             Departments
           </a>
-          <a href="#courses" className="block px-4 py-2 hover:bg-rust-300">
+          <a href="#courses" className="block px-4 py-2 hover:bg-[#b9445b]">
             Courses
           </a>
           <div className="relative">
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="w-full text-left px-4 py-2 hover:bg-rust-300"
+              className="w-full text-left px-4 py-2 hover:bg-[#b9445b] flex gap-1 items-center"
             >
               More
+              <span className="scale-75 pt-2">
+                {!isDropdownOpen ? <FaChevronDown /> : <FaChevronUp />}
+              </span>
             </button>
             {isDropdownOpen && (
-              <div className="bg-rust-200">
+              <div className="mt-2">
                 <a
                   href="#admissions"
-                  className="block px-4 py-2 hover:bg-rust-300"
+                  className="block px-4 py-2 hover:bg-[#b9445b]"
                 >
                   Admissions
                 </a>
                 <a
                   href="#placement"
-                  className="block px-4 py-2 hover:bg-rust-300"
+                  className="block px-4 py-2 hover:bg-[#b9445b]"
                 >
                   Placement
                 </a>
                 <a
                   href="#enquiry"
-                  className="block px-4 py-2 hover:bg-rust-300"
+                  className="block px-4 py-2 hover:bg-[#b9445b]"
                 >
                   Enquiry
                 </a>
@@ -125,7 +146,7 @@ const Navbar = () => {
             )}
           </div>
         </nav>
-      )}
+      </div>
     </header>
   );
 };

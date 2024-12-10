@@ -37,16 +37,16 @@ const App = () => {
       {/* Background Image */}
       <div className="background-image"></div>
 
-      <Navbar />
+      <Navbar className="z-40" />
       <div className="flex min-h-screen w-full relative justify-between">
         <div
           className={`h-full sticky top-0 transition-transform duration-300 ${
             isSidebarSticky ? "bg-white " : ""
-          } z-30 md:w-[13%] w-0`}
+          } z-50 md:w-[13%] w-0`}
         >
           <SidebarTabs />
         </div>
-        <div className="h-full w-[100%] md:w-[87%]">
+        <div className="h-full w-[100%] lg:w-[87%] z-10">
           <div className="ml-0 md:ml-14 py-0 px-6">
             <section id="" className="mt-1">
               <Hero />

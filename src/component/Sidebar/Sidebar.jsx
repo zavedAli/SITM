@@ -4,6 +4,7 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaYoutube } from "react-icons/fa6";
 import { GoSidebarCollapse } from "react-icons/go";
+import Logo from "../../assets/mini-logo-sitm.png";
 
 const SidebarTabs = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -55,7 +56,9 @@ const SidebarTabs = () => {
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 md:relative md:translate-x-0 z-20 rounded-lg md:mx-1 md:my-1`}
       >
-        <div className=" p-4 flex flex-col items-center relative"> logo</div>
+        <div className=" py-8 flex flex-col items-center relative">
+          <img src={Logo} alt="logo" className="w-20" />
+        </div>
         <div className="h-[1px] w-[100%] bg-slate-400"></div>
         <div className="space-y-2 p-4 flex flex-col items-center relative">
           {tabs.map((tab) => (
@@ -72,7 +75,7 @@ const SidebarTabs = () => {
             </button>
           ))}
         </div>
-        <div className="flex gap-6 justify-center scale-110 absolute bottom-32 left-14">
+        <div className="flex gap-6 justify-center scale-110 absolute bottom-32 md:bottom-10 left-14">
           <FaFacebook className="hover:text-rust-100  cursor-pointer transition-all ease-in" />{" "}
           <FaSquareXTwitter className="hover:text-rust-100  cursor-pointer transition-all ease-in" />{" "}
           <AiFillInstagram className="hover:text-rust-100  cursor-pointer transition-all ease-in" />{" "}
