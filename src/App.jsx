@@ -13,8 +13,24 @@ import Footer from "./component/Footer/Footer";
 import "./App.css"; // Add this line to import the CSS file
 import Recruiters from "./component/Recruiters/Recruiters";
 import ApplyOnline from "./component/ApplyOnline/ApplyOnline";
+import { DarkModeProvider } from "./DarkModeContext";
+import { useContext } from "react";
+import { DarkModeContext } from "./DarkModeContext";
 
 const App = () => {
+  const [isSidebarSticky, setIsSidebarSticky] = useState(false);
+
+  // Dark mode should be used inside the component tree that is wrapped by DarkModeProvider
+  return (
+    <DarkModeProvider>
+      <AppContent />
+    </DarkModeProvider>
+  );
+};
+
+const AppContent = () => {
+  const { darkMode } = useContext(DarkModeContext); // Now you can use darkMode safely here
+
   const [isSidebarSticky, setIsSidebarSticky] = useState(false);
 
   useEffect(() => {
@@ -34,14 +50,16 @@ const App = () => {
   }, []);
 
   return (
-    <div className="relative">
+    <div
+      className={`relative ${darkMode ? "bg-[#0e0e0eef]" : "bg-[#ffffff9f]"}`}
+    >
       {/* Background Image */}
       <div className="background-image"></div>
       <Navbar className="z-40" />
       <div className="flex min-h-screen w-full relative justify-between">
         <div
           className={`h-full sticky top-0 transition-transform duration-300 ${
-            isSidebarSticky ? "bg-white " : ""
+            isSidebarSticky ? " " : ""
           } z-50 md:w-[13%] w-0`}
         >
           <SidebarTabs />

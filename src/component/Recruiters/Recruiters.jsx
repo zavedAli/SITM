@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DarkModeContext } from "../../DarkModeContext";
 
 const recruitersData = [
   {
@@ -46,26 +47,27 @@ const recruitersData = [
 ];
 
 const Recruiters = () => {
+  const { darkMode } = useContext(DarkModeContext);
   return (
-    <div className="p-6 bg-gray-100">
-      <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
+    <div className={`text-gray-500`}>
+      <h2 className="text-2xl font-bold text-center pt-6 mb-6">
         Our Recruiters And Training Partner
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {recruitersData.map((recruiter, index) => (
           <div
             key={index}
-            className="flex flex-col items-center bg-white rounded-lg shadow-lg p-4 hover:scale-105 transition-transform duration-300"
+            className={`flex flex-col items-center bg-white ${
+              darkMode ? "bg-gray-800 text-gray-100" : ""
+            } rounded-lg shadow-lg p-4 hover:scale-105 transition-transform duration-300`}
           >
             <img
               src={recruiter.logo}
               alt={`${recruiter.name} Logo`}
-              className="w-20 h-20 object-contain mb-4"
+              className="w-20 h-20 object-contain mb-4 bg-white rounded-full p-2"
             />
-            <h3 className="text-xl font-semibold text-gray-700">
-              {recruiter.name}
-            </h3>
-            <p className="text-sm text-gray-600 text-center mt-2">
+            <h3 className="text-xl font-semibold ">{recruiter.name}</h3>
+            <p className="text-sm text-gray-500 text-center mt-2">
               {recruiter.description}
             </p>
           </div>

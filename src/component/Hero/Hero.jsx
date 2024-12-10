@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DarkModeContext } from "../../DarkModeContext";
 
 const Hero = () => {
+  const { darkMode } = useContext(DarkModeContext);
+  console.log(darkMode);
+
   return (
     <div
       className="w-full p-6 flex flex-col md:flex-row items-center justify-between bg-cover bg-center bg-opacity-[0.2]"
@@ -16,11 +20,14 @@ const Hero = () => {
           className="w-full max-w-sm object-cover rounded-lg shadow-lg"
         />
       </div>
-      <div className="w-full md:w-1/2 mt-6 md:mt-0 flex flex-col items-center md:items-start text-center md:text-left bg-white  p-4 rounded-lg">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">
-          Welcome to SITM
-        </h1>
-        <p className="text-lg text-gray-600 mb-6">
+      <div
+        className={`w-full md:w-1/2 mt-6 md:mt-0 flex flex-col items-center
+       md:items-start text-center md:text-left ${
+         darkMode ? "bg-gray-800 text-white" : "bg-gray-200 text-black"
+       }   p-4 rounded-lg`}
+      >
+        <h1 className="text-4xl font-bold mb-4">Welcome to SITM</h1>
+        <p className="text-lg text-gray-500 mb-6">
           Join us to explore endless learning opportunities, connect with peers,
           and build a successful future.
         </p>

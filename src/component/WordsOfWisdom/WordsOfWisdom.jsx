@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DarkModeContext } from "../../DarkModeContext";
 
 const WordsOfWisdom = () => {
+  const { darkMode } = useContext(DarkModeContext);
+
   return (
     <div className="w-full flex flex-col justify-center">
-      <div className="max-w-4xl p-6 bg-white shadow-lg rounded-lg my-2 justify-center">
-        <h2 className="text-lg font-semibold text-gray-700 mb-4 text-center">
+      <div
+        className={`max-w-4xl p-6 bg-white shadow-lg rounded-lg my-2 justify-center
+         ${darkMode ? "bg-gray-800 text-white" : "bg-gray-100 text-black"}`}
+      >
+        <h2 className="text-lg font-semibold  mb-4 text-center">
           Advisor's Note
         </h2>
         <div className="flex flex-col items-center md:flex-row gap-4">
@@ -18,7 +24,7 @@ const WordsOfWisdom = () => {
           </div>
           {/* Content Section */}
           <div>
-            <p className="text-gray-600 mb-4 text-justify">
+            <p className=" mb-4 text-justify">
               It is my great pleasure to welcome you to Scholar’s Institute of
               Technology and Management (SITM), located at the Gateway of
               North-East, Guwahati. The Institute began functioning as a
@@ -29,7 +35,7 @@ const WordsOfWisdom = () => {
               is promoted by the Scholar’s Academy Education Trust, founded on
               8th May, 2008 under the Indian Trust Act, 1882.
             </p>
-            <p className="font-semibold text-gray-700">
+            <p className="font-semibold ">
               - Dr. A.A.S.H. Barbhuiya, Advisor, SITM
             </p>
           </div>
@@ -39,8 +45,11 @@ const WordsOfWisdom = () => {
           Read More
         </button>
       </div>
-      <div className="max-w-4xl p-6 bg-white shadow-lg rounded-lg my-2 justify-center">
-        <h2 className="text-lg font-semibold text-gray-700 mb-4 text-center">
+      <div
+        className={`max-w-4xl p-6 bg-white shadow-lg rounded-lg my-2 justify-center
+         ${darkMode ? "bg-gray-800 text-white" : "bg-gray-100 text-black"}`}
+      >
+        <h2 className="text-lg font-semibold  mb-4 text-center">
           Director's Note
         </h2>
         <div className="flex flex-col md:flex-row gap-4 items-center md:justify-start">
@@ -54,7 +63,7 @@ const WordsOfWisdom = () => {
           </div>
           {/* Content Section */}
           <div>
-            <p className="text-gray-600 mb-4 text-justify  line-clamp-[7]">
+            <p className=" mb-4 text-justify  line-clamp-[7]">
               Beloved Students and Respected Parents, Whole Hearted greeting to
               all my beloved students and their respected parents for choosing
               this SITM for their future building institution. This institution
@@ -73,9 +82,7 @@ const WordsOfWisdom = () => {
               educational home is choosing the best facilities that will
               facilitate them to have an extra edge.
             </p>
-            <p className="font-semibold text-gray-700">
-              - J. Lodh, Director, SITM
-            </p>
+            <p className="font-semibold ">- J. Lodh, Director, SITM</p>
           </div>
         </div>
         {/* Read More Button */}

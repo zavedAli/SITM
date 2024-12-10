@@ -10,21 +10,24 @@ const Footer = () => {
         <div className="mt-4 flex justify-center gap-4">
           <a
             href="#"
-            className="text-gray-400 hover:text-white transition-colors duration-200"
+            className="hover:text-gray-300 text-white transition-colors duration-200"
           >
             Privacy Policy
-          </a>
+          </a>{" "}
+          |
           <a
             href="#"
-            className="text-gray-400 hover:text-white transition-colors duration-200"
+            className="hover:text-gray-300 text-white transition-colors duration-200"
           >
             Terms of Service
-          </a>
+          </a>{" "}
+          |
           <a
             href="#"
-            className="text-gray-400 hover:text-white transition-colors duration-200"
+            className="hover:text-gray-300 text-white transition-colors duration-200"
           >
-            Contact Us
+            {" "}
+            | Contact Us
           </a>
         </div>
       </div>

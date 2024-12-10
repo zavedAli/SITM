@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DarkModeContext } from "../../DarkModeContext";
 
 const partners = [
   {
@@ -32,8 +33,13 @@ const partners = [
 ];
 
 const MoU = () => {
+  const { darkMode } = useContext(DarkModeContext);
   return (
-    <div className="w-full p-6 bg-gray-100">
+    <div
+      className={`w-full p-6 bg-gray-100 ${
+        darkMode ? "bg-gray-800 text-gray-500" : ""
+      }`}
+    >
       <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">
         Our MOU Partners
       </h2>
@@ -41,19 +47,23 @@ const MoU = () => {
         {partners.map((partner, index) => (
           <div
             key={index}
-            className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center"
+            className={` ${
+              darkMode ? "bg-gray-900 text-gray-200" : "bg-white"
+            } shadow-md rounded-lg p-4 flex md:flex-col gap-3 items-center`}
           >
             <img
               src={partner.logo}
               alt={partner.name}
-              className="h-32 w-32 object-contain mb-4"
+              className="h-32 w-32 object-contain mb-4 bg-white px-5 rounded-full"
             />
-            <h3 className="text-lg font-semibold text-gray-800 mb-2">
-              {partner.name}
-            </h3>
-            <p className="text-sm text-gray-600 text-center">
-              {partner.description}
-            </p>
+            <div className="flex flex-col items-center">
+              <h3 className="text-lg font-semibold  mb-2 text-gray-400">
+                {partner.name}
+              </h3>
+              <p className="text-sm  text-center text-gray-500">
+                {partner.description}
+              </p>
+            </div>
           </div>
         ))}
       </div>

@@ -7,7 +7,7 @@
   background-image: url("https://images.pexels.com/photos/911738/pexels-photo-911738.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"); /* Replace with your image URL */
   background-size: cover;
   background-position: center;
-  background-color: #f2a05828;
+  background-color: #1f140bb7;
   z-index: -1; /* Make sure it's behind other content */
   opacity: 0.1; /* Adjust the opacity as needed */
 }

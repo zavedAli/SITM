@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
+import { DarkModeContext } from "../../DarkModeContext";
 
 const facilities = [
   {
@@ -36,9 +37,14 @@ const facilities = [
 ];
 
 const FacilitiesCarousel = () => {
+  const { darkMode } = useContext(DarkModeContext);
   return (
     <div className="w-full p-6 z-0 text-justify">
-      <h2 className="text-3xl font-semibold text-center text-gray-800 mb-8">
+      <h2
+        className={`text-3xl font-semibold text-center ${
+          darkMode ? "text-white" : "text-gray-800"
+        }  mb-8`}
+      >
         Facilities at SITM
       </h2>
       <Swiper
@@ -56,8 +62,10 @@ const FacilitiesCarousel = () => {
         {facilities.map((facility, index) => (
           <SwiperSlide key={index} className="flex justify-center w-full ">
             <div
-              className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg 
-            transition-shadow duration-300 w-full max-w-screen sm:max-w-[350px] h-[350px] flex flex-col"
+              className={`${
+                darkMode ? "bg-gray-800 text-white" : "bg-white"
+              }  shadow-md rounded-lg overflow-hidden hover:shadow-lg 
+            transition-shadow duration-300 w-full max-w-screen sm:max-w-[350px] h-[350px] flex flex-col`}
             >
               <img
                 src={facility.image}
@@ -65,10 +73,8 @@ const FacilitiesCarousel = () => {
                 className="h-40 w-full object-cover"
               />
               <div className="p-4 flex-grow">
-                <h3 className="text-lg font-bold text-gray-700 mb-2">
-                  {facility.title}
-                </h3>
-                <p className="text-sm text-gray-600">{facility.description}</p>
+                <h3 className="text-lg font-bold  mb-2">{facility.title}</h3>
+                <p className="text-sm text-gray-400">{facility.description}</p>
               </div>
             </div>
           </SwiperSlide>

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DarkModeContext } from "../../DarkModeContext";
 
 const newsArticles = [
   {
@@ -36,23 +37,25 @@ const newsArticles = [
 ];
 
 const News = () => {
+  const { darkMode } = useContext(DarkModeContext);
   return (
-    <div className="w-full p-6">
-      <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">
-        Latest News
-      </h2>
+    <div className={`w-full p-6 ${darkMode ? "bg-gray-800 text-white" : ""}`}>
+      <h2 className="text-3xl font-semibold text-center  mb-6">Latest News</h2>
       <div className="space-y-6">
         {newsArticles.map((article, index) => (
-          <div key={index} className="bg-white shadow-md rounded-lg flex p-4">
+          <div
+            key={index}
+            className={`bg-white shadow-md rounded-lg flex p-4 cursor-pointer  ${
+              darkMode ? "bg-gray-900 text-gray-400" : ""
+            }`}
+          >
             <img
               src={article.image}
               alt={article.title}
               className="h-24 w-24 object-cover rounded-md mr-4"
             />
             <div className="flex-grow">
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                {article.title}
-              </h3>
+              <h3 className="text-xl font-semibold  mb-2">{article.title}</h3>
               <p className="text-sm text-gray-600 mb-2">
                 {article.description}
               </p>

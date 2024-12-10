@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { motion, useAnimation } from "framer-motion";
+import { DarkModeContext } from "../../DarkModeContext";
 
 const campusImages = [
   {
@@ -45,6 +46,7 @@ const campusImages = [
 ];
 
 const CampusTour = () => {
+  const { darkMode } = useContext(DarkModeContext);
   const [scrollY, setScrollY] = useState(0);
   const [direction, setDirection] = useState("down");
   const animation = useAnimation();
@@ -78,14 +80,18 @@ const CampusTour = () => {
 
   return (
     <div className="w-full p-6">
-      <h2 className="text-3xl font-semibold text-center text-gray-800 mb-8">
+      <h2
+        className={`text-3xl font-semibold text-center ${
+          darkMode ? "text-gray-200" : "text-gray-800"
+        }  mb-8`}
+      >
         Campus Tour
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
         {campusImages.map((item, index) => (
           <motion.div
             key={index}
-            className="relative overflow-hidden rounded-lg shadow-lg"
+            className="relative overflow-hidden rounded-lg shadow-lg hover:scale-125 cursor-pointer"
             initial={{ opacity: 0, y: 50 }}
             animate={animation}
             whileHover={{
@@ -97,7 +103,7 @@ const CampusTour = () => {
             <img
               src={item.image}
               alt={item.title}
-              className="w-full h-60 object-cover"
+              className="w-full h-60 object-cover "
             />
             <motion.div
               className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0"

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { DarkModeContext } from "../../DarkModeContext";
 
 const ApplyOnline = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +9,7 @@ const ApplyOnline = () => {
     course: "",
     message: "",
   });
+  const { darkMode } = useContext(DarkModeContext);
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -24,24 +26,24 @@ const ApplyOnline = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-100">
-      <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
+    <div className={`p-6 bg-gray-100 ${darkMode ? "bg-gray-800" : ""}`}>
+      <h2 className="text-3xl font-semibold text-center text-gray-500 mb-6">
         Apply Online
       </h2>
       {isSubmitted ? (
         <div className="text-center text-green-600 text-lg font-semibold">
-          Thank you! Your application has been submitted.
+          Thank you! Your application has been submitted. Our Team will Contact
+          you
         </div>
       ) : (
         <form
           onSubmit={handleSubmit}
-          className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg"
+          className={`max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg ${
+            darkMode ? "bg-gray-900 text-white" : ""
+          }`}
         >
           <div className="mb-4">
-            <label
-              className="block text-gray-700 font-medium mb-2"
-              htmlFor="name"
-            >
+            <label className="block  font-medium mb-2" htmlFor="name">
               Full Name
             </label>
             <input
@@ -51,14 +53,11 @@ const ApplyOnline = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full p-2 border border-gray-300 rounded-lg"
+              className="w-full p-2 border border-gray-300 bg-transparent rounded-lg"
             />
           </div>
           <div className="mb-4">
-            <label
-              className="block text-gray-700 font-medium mb-2"
-              htmlFor="email"
-            >
+            <label className="block  font-medium mb-2" htmlFor="email">
               Email
             </label>
             <input
@@ -68,14 +67,11 @@ const ApplyOnline = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full p-2 border border-gray-300 rounded-lg"
+              className="w-full p-2 border border-gray-300 bg-transparent rounded-lg"
             />
           </div>
           <div className="mb-4">
-            <label
-              className="block text-gray-700 font-medium mb-2"
-              htmlFor="phone"
-            >
+            <label className="block  font-medium mb-2" htmlFor="phone">
               Phone Number
             </label>
             <input
@@ -85,14 +81,11 @@ const ApplyOnline = () => {
               value={formData.phone}
               onChange={handleChange}
               required
-              className="w-full p-2 border border-gray-300 rounded-lg"
+              className="w-full p-2 border border-gray-300 bg-transparent rounded-lg"
             />
           </div>
           <div className="mb-4">
-            <label
-              className="block text-gray-700 font-medium mb-2"
-              htmlFor="course"
-            >
+            <label className="block  font-medium mb-2" htmlFor="course">
               Course Applying For
             </label>
             <select
@@ -101,20 +94,42 @@ const ApplyOnline = () => {
               value={formData.course}
               onChange={handleChange}
               required
-              className="w-full p-2 border border-gray-300 rounded-lg"
+              className="w-full p-2 border border-gray-300 bg-transparent rounded-lg "
             >
-              <option value="">Select a course</option>
-              <option value="BCA">BCA</option>
-              <option value="MCA">MCA</option>
-              <option value="MBA">MBA</option>
-              <option value="B.Tech">B.Tech</option>
+              <option
+                value=""
+                className={`${darkMode ? "bg-gray-800 text-white" : ""}`}
+              >
+                Select a course
+              </option>
+              <option
+                value="BCA"
+                className={`${darkMode ? "bg-gray-800 text-white" : ""}`}
+              >
+                BCA
+              </option>
+              <option
+                value="MCA"
+                className={`${darkMode ? "bg-gray-800 text-white" : ""}`}
+              >
+                MCA
+              </option>
+              <option
+                value="MBA"
+                className={`${darkMode ? "bg-gray-800 text-white" : ""}`}
+              >
+                MBA
+              </option>
+              <option
+                value="B.Tech"
+                className={`${darkMode ? "bg-gray-800 text-white" : ""}`}
+              >
+                B.Tech
+              </option>
             </select>
           </div>
           <div className="mb-4">
-            <label
-              className="block text-gray-700 font-medium mb-2"
-              htmlFor="message"
-            >
+            <label className="block  font-medium mb-2" htmlFor="message">
               Message (Optional)
             </label>
             <textarea
@@ -123,7 +138,7 @@ const ApplyOnline = () => {
               value={formData.message}
               onChange={handleChange}
               rows="4"
-              className="w-full p-2 border border-gray-300 rounded-lg"
+              className="w-full p-2 border border-gray-300 rounded-lg bg-transparent"
             ></textarea>
           </div>
           <button

@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { IoMdClose } from "react-icons/io";
 import { TbMenuDeep } from "react-icons/tb";
 import Logo from "../../assets/logo-sitm.png";
 import { FaChevronDown } from "react-icons/fa";
 import { FaChevronUp } from "react-icons/fa";
+import { FaRegMoon } from "react-icons/fa";
+import { FaSun } from "react-icons/fa";
+import { DarkModeContext } from "../../DarkModeContext";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { darkMode, setDarkMode } = useContext(DarkModeContext);
+  console.log(darkMode);
 
   return (
     <header className="bg-rust-200 text-white shadow-md relative">
@@ -18,7 +23,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex space-x-6">
+        <nav className="hidden md:flex space-x-6 md:items-center">
           <a href="#home" className="hover:text-gray-300">
             Home
           </a>
@@ -70,6 +75,13 @@ const Navbar = () => {
             )}
           </div>
         </nav>
+        <a
+          href="#"
+          className="hover:text-gray-300 mx-12"
+          onClick={() => setDarkMode((prev) => !prev)}
+        >
+          {darkMode ? <FaSun /> : <FaRegMoon />}
+        </a>
 
         {/* Mobile Menu Button */}
         <button
