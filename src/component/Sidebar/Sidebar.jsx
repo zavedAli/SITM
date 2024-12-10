@@ -3,6 +3,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaYoutube } from "react-icons/fa6";
+import { GoSidebarCollapse } from "react-icons/go";
 
 const SidebarTabs = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -82,9 +83,9 @@ const SidebarTabs = () => {
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         className={`fixed bottom-10 left-6 w-12 h-12 shadow-lg flex items-center rounded-full ${
           isSidebarOpen ? "bg-white text-rust-200" : "bg-rust-200 text-white"
-        } justify-center text-3xl md:hidden z-30 pb-2 shadow-lg`}
+        } justify-center text-3xl md:hidden z-30  shadow-lg`}
       >
-        +
+        <GoSidebarCollapse />
       </button>
 
       {/* Overlay */}
