@@ -24,9 +24,14 @@ const Hero = () => {
           Join us to explore endless learning opportunities, connect with peers,
           and build a successful future.
         </p>
-        <button className="bg-rust-100 text-white py-2 px-4 rounded hover:bg-rust-200 transition duration-300">
-          Learn More
-        </button>
+        <div className="flex gap-3">
+          <button className="bg-rust-100 text-white py-2 px-4 rounded hover:bg-rust-200 transition duration-300">
+            Learn More
+          </button>
+          <button className="border-rust-100 border-[2px] text-rust-100 py-2 px-4 rounded hover:border-rust-200 hover:text-rust-200 transition duration-300">
+            Apply Online
+          </button>
+        </div>
       </div>
     </div>
   );

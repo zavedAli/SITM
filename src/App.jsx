@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import InfoBanner from "./component/InfoBanner/InfoBanner";
 import Navbar from "./component/Navbar/Navbar";
 import SidebarTabs from "./component/Sidebar/Sidebar";
 import Hero from "./component/Hero/Hero";
@@ -36,7 +37,6 @@ const App = () => {
     <div className="relative">
       {/* Background Image */}
       <div className="background-image"></div>
-
       <Navbar className="z-40" />
       <div className="flex min-h-screen w-full relative justify-between">
         <div
