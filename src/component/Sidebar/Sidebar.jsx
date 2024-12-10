@@ -53,8 +53,10 @@ const SidebarTabs = () => {
       <aside
         className={`fixed top-0 left-0 h-[100vh] bg-rust-300 text-white w-64 transform ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 md:relative md:translate-x-0 z-20 rounded-lg mx-1 my-2`}
+        } transition-transform duration-300 md:relative md:translate-x-0 z-20 rounded-lg md:mx-1 md:mt-1`}
       >
+        <div className=" p-4 flex flex-col items-center relative"> logo</div>
+        <div className="h-[1px] w-[100%] bg-slate-400"></div>
         <div className="space-y-2 p-4 flex flex-col items-center relative">
           {tabs.map((tab) => (
             <button
