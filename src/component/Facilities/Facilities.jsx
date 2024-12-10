@@ -37,7 +37,7 @@ const facilities = [
 
 const FacilitiesCarousel = () => {
   return (
-    <div className="w-full p-6 z-0">
+    <div className="w-full p-6 z-0 text-justify">
       <h2 className="text-3xl font-semibold text-center text-gray-800 mb-8">
         Facilities at SITM
       </h2>

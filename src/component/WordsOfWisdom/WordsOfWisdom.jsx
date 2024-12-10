@@ -3,13 +3,13 @@ import React from "react";
 const WordsOfWisdom = () => {
   return (
     <div className="w-full flex flex-col justify-center">
-      <div className="max-w-4xl p-6 bg-white shadow-lg rounded-lg my-2">
-        <h2 className="text-lg font-semibold text-gray-700 mb-4">
+      <div className="max-w-4xl p-6 bg-white shadow-lg rounded-lg my-2 justify-center">
+        <h2 className="text-lg font-semibold text-gray-700 mb-4 text-center">
           Advisor's Note
         </h2>
-        <div className="flex flex-col md:flex-row gap-4">
+        <div className="flex flex-col items-center md:flex-row gap-4">
           {/* Image Section */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0  ">
             <img
               src="https://anydhhnsep.cloudimg.io/v7/http://sitmguwahati.org/images/advisor.jpg?h=300"
               alt="Advisor"
@@ -18,7 +18,7 @@ const WordsOfWisdom = () => {
           </div>
           {/* Content Section */}
           <div>
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 mb-4 text-justify">
               It is my great pleasure to welcome you to Scholar’s Institute of
               Technology and Management (SITM), located at the Gateway of
               North-East, Guwahati. The Institute began functioning as a
@@ -39,11 +39,11 @@ const WordsOfWisdom = () => {
           Read More
         </button>
       </div>
-      <div className="max-w-4xl p-6 bg-white shadow-lg rounded-lg my-2">
-        <h2 className="text-lg font-semibold text-gray-700 mb-4">
+      <div className="max-w-4xl p-6 bg-white shadow-lg rounded-lg my-2 justify-center">
+        <h2 className="text-lg font-semibold text-gray-700 mb-4 text-center">
           Director's Note
         </h2>
-        <div className="flex flex-col md:flex-row gap-4">
+        <div className="flex flex-col md:flex-row gap-4 items-center md:justify-start">
           {/* Image Section */}
           <div className="flex-shrink-0">
             <img
@@ -54,7 +54,7 @@ const WordsOfWisdom = () => {
           </div>
           {/* Content Section */}
           <div>
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 mb-4 text-justify line-clamp-[7]">
               Beloved Students and Respected Parents, Whole Hearted greeting to
               all my beloved students and their respected parents for choosing
               this SITM for their future building institution. This institution
