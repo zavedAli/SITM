@@ -69,7 +69,7 @@ const SidebarTabs = () => {
             </button>
           ))}
         </div>
-        <div className="flex gap-6 justify-center scale-110 absolute bottom-20 left-14">
+        <div className="flex gap-6 justify-center scale-110 absolute bottom-32 left-14">
           <FaFacebook className="hover:text-rust-100  cursor-pointer transition-all ease-in" />{" "}
           <FaSquareXTwitter className="hover:text-rust-100  cursor-pointer transition-all ease-in" />{" "}
           <AiFillInstagram className="hover:text-rust-100  cursor-pointer transition-all ease-in" />{" "}
@@ -81,8 +81,8 @@ const SidebarTabs = () => {
       <button
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         className={`fixed bottom-10 left-6 w-12 h-12 shadow-lg flex items-center rounded-full ${
-          isSidebarOpen ? "bg-white text-blue-900" : "bg-blue-900 text-white"
-        } justify-center text-3xl md:hidden z-30`}
+          isSidebarOpen ? "bg-white text-rust-200" : "bg-rust-200 text-white"
+        } justify-center text-3xl md:hidden z-30 pb-2 shadow-lg`}
       >
         +
       </button>

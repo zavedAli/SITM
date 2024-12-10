@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { IoMdClose } from "react-icons/io";
+import { TbMenuDeep } from "react-icons/tb";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -73,49 +75,49 @@ const Navbar = () => {
           className="md:hidden focus:outline-none"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          <span className="material-icons">menu</span>
+          {!isMobileMenuOpen ? <TbMenuDeep /> : <IoMdClose />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <nav className="md:hidden bg-blue-800">
-          <a href="#home" className="block px-4 py-2 hover:bg-blue-700">
+        <nav className="md:hidden bg-rust-200">
+          <a href="#home" className="block px-4 py-2 hover:bg-rust-300">
             Home
           </a>
-          <a href="#about" className="block px-4 py-2 hover:bg-blue-700">
+          <a href="#about" className="block px-4 py-2 hover:bg-rust-300">
             About
           </a>
-          <a href="#departments" className="block px-4 py-2 hover:bg-blue-700">
+          <a href="#departments" className="block px-4 py-2 hover:bg-rust-300">
             Departments
           </a>
-          <a href="#courses" className="block px-4 py-2 hover:bg-blue-700">
+          <a href="#courses" className="block px-4 py-2 hover:bg-rust-300">
             Courses
           </a>
           <div className="relative">
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="w-full text-left px-4 py-2 hover:bg-blue-700"
+              className="w-full text-left px-4 py-2 hover:bg-rust-300"
             >
               More
             </button>
             {isDropdownOpen && (
-              <div className="bg-blue-700">
+              <div className="bg-rust-200">
                 <a
                   href="#admissions"
-                  className="block px-4 py-2 hover:bg-blue-600"
+                  className="block px-4 py-2 hover:bg-rust-300"
                 >
                   Admissions
                 </a>
                 <a
                   href="#placement"
-                  className="block px-4 py-2 hover:bg-blue-600"
+                  className="block px-4 py-2 hover:bg-rust-300"
                 >
                   Placement
                 </a>
                 <a
                   href="#enquiry"
-                  className="block px-4 py-2 hover:bg-blue-600"
+                  className="block px-4 py-2 hover:bg-rust-300"
                 >
                   Enquiry
                 </a>
