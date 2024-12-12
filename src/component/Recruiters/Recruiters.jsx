@@ -57,7 +57,7 @@ const Recruiters = () => {
         {recruitersData.map((recruiter, index) => (
           <div
             key={index}
-            className={`flex flex-col items-center bg-white ${
+            className={`flex flex-col items-center  ${
               darkMode ? "bg-gray-800 text-gray-100" : ""
             } rounded-lg shadow-lg p-4 hover:scale-105 transition-transform duration-300`}
           >

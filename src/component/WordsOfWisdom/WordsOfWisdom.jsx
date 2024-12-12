@@ -7,7 +7,7 @@ const WordsOfWisdom = () => {
   return (
     <div className="w-full flex flex-col justify-center">
       <div
-        className={`max-w-4xl p-6 bg-white shadow-lg rounded-lg my-2 justify-center
+        className={`max-w-4xl p-6  shadow-lg rounded-lg my-2 justify-center
          ${darkMode ? "bg-gray-800 text-white" : "bg-gray-100 text-black"}`}
       >
         <h2 className="text-lg font-semibold  mb-4 text-center">
@@ -46,7 +46,7 @@ const WordsOfWisdom = () => {
         </button>
       </div>
       <div
-        className={`max-w-4xl p-6 bg-white shadow-lg rounded-lg my-2 justify-center
+        className={`max-w-4xl p-6  shadow-lg rounded-lg my-2 justify-center
          ${darkMode ? "bg-gray-800 text-white" : "bg-gray-100 text-black"}`}
       >
         <h2 className="text-lg font-semibold  mb-4 text-center">

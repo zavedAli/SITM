@@ -45,7 +45,7 @@ const News = () => {
         {newsArticles.map((article, index) => (
           <div
             key={index}
-            className={`bg-white shadow-md rounded-lg flex p-4 cursor-pointer  ${
+            className={` shadow-md rounded-lg flex p-4 cursor-pointer  ${
               darkMode ? "bg-gray-900 text-gray-400" : ""
             }`}
           >

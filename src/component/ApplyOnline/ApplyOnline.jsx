@@ -26,7 +26,7 @@ const ApplyOnline = () => {
   };
 
   return (
-    <div className={`p-6 bg-gray-100 ${darkMode ? "bg-gray-800" : ""}`}>
+    <div className={`p-6  ${darkMode ? "bg-gray-800" : "bg-gray-100"}`}>
       <h2 className="text-3xl font-semibold text-center text-gray-500 mb-6">
         Apply Online
       </h2>
@@ -38,8 +38,8 @@ const ApplyOnline = () => {
       ) : (
         <form
           onSubmit={handleSubmit}
-          className={`max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg ${
-            darkMode ? "bg-gray-900 text-white" : ""
+          className={`max-w-lg mx-auto  p-6 rounded-lg shadow-lg ${
+            darkMode ? "bg-gray-900 text-white" : "bg-white"
           }`}
         >
           <div className="mb-4">
