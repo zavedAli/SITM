@@ -56,7 +56,7 @@ const News = () => {
             />
             <div className="flex-grow">
               <h3 className="text-xl font-semibold  mb-2">{article.title}</h3>
-              <p className="text-sm text-gray-600 mb-2">
+              <p className="text-sm text-gray-600 mb-2 line-clamp-2">
                 {article.description}
               </p>
               <span className="text-xs text-gray-500">{article.date}</span>

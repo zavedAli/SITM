@@ -40,27 +40,27 @@ const MoU = () => {
         darkMode ? "bg-gray-800 text-gray-500" : ""
       }`}
     >
-      <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">
+      <h2 className="text-3xl font-semibold text-center text-gray-600 mb-6">
         Our MOU Partners
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
         {partners.map((partner, index) => (
           <div
             key={index}
             className={` ${
               darkMode ? "bg-gray-900 text-gray-200" : "bg-white"
-            } shadow-md rounded-lg p-4 flex md:flex-col gap-3 items-center`}
+            } shadow-md rounded-lg p-4 flex md:flex-col gap-3  md:items-center`}
           >
             <img
               src={partner.logo}
               alt={partner.name}
               className="h-32 w-32 object-contain mb-4 bg-white px-5 rounded-full"
             />
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col justify-center md:items-center ">
               <h3 className="text-lg font-semibold  mb-2 text-gray-400">
                 {partner.name}
               </h3>
-              <p className="text-sm  text-center text-gray-500">
+              <p className="text-sm md:text-center   text-gray-500">
                 {partner.description}
               </p>
             </div>

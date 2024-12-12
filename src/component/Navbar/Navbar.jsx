@@ -7,6 +7,7 @@ import { FaChevronUp } from "react-icons/fa";
 import { FaRegMoon } from "react-icons/fa";
 import { FaSun } from "react-icons/fa";
 import { DarkModeContext } from "../../DarkModeContext";
+import { span } from "framer-motion/client";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -74,26 +75,48 @@ const Navbar = () => {
               </div>
             )}
           </div>
+          {!isMobileMenuOpen && (
+            <a
+              href="#"
+              className="hover:text-gray-300 mx-6"
+              onClick={() => setDarkMode((prev) => !prev)}
+            >
+              {darkMode ? <FaSun /> : <FaRegMoon />}
+            </a>
+          )}
         </nav>
-        <a
-          href="#"
-          className="hover:text-gray-300 mx-12"
-          onClick={() => setDarkMode((prev) => !prev)}
-        >
-          {darkMode ? <FaSun /> : <FaRegMoon />}
-        </a>
 
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden focus:outline-none z-50"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {!isMobileMenuOpen ? (
-            <TbMenuDeep size={24} />
-          ) : (
-            <IoMdClose size={24} />
-          )}
-        </button>
+
+        <div className="flex gap-4 items-center md:hidden ">
+          <a
+            href="#"
+            className="hover:text-gray-300 md:hidden flex"
+            onClick={() => {
+              console.log("Dark mode toggled");
+              setDarkMode((prev) => !prev);
+            }}
+          >
+            {darkMode ? (
+              <span className="hover:animate-spin">
+                <FaSun />
+              </span>
+            ) : (
+              <FaRegMoon className="hover:animate-pulse" />
+            )}
+          </a>
+
+          <button
+            className="focus:outline-none z-50"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {!isMobileMenuOpen ? (
+              <TbMenuDeep size={24} />
+            ) : (
+              <IoMdClose size={24} />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Overlay */}

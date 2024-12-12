@@ -8,7 +8,9 @@ const WordsOfWisdom = () => {
     <div className="w-full flex flex-col justify-center">
       <div
         className={`max-w-4xl p-6  shadow-lg rounded-lg my-2 justify-center
-         ${darkMode ? "bg-gray-800 text-white" : "bg-gray-100 text-black"}`}
+         ${
+           darkMode ? "bg-gray-800 text-gray-300" : "bg-gray-100 text-gray-700"
+         }`}
       >
         <h2 className="text-lg font-semibold  mb-4 text-center">
           Advisor's Note
@@ -24,7 +26,7 @@ const WordsOfWisdom = () => {
           </div>
           {/* Content Section */}
           <div>
-            <p className=" mb-4 text-justify">
+            <p className=" mb-4 text-justify line-clamp-[7] text-sm ">
               It is my great pleasure to welcome you to Scholar’s Institute of
               Technology and Management (SITM), located at the Gateway of
               North-East, Guwahati. The Institute began functioning as a
@@ -41,15 +43,21 @@ const WordsOfWisdom = () => {
           </div>
         </div>
         {/* Read More Button */}
-        <button className="mt-4 px-4 py-2 bg-rust-100 text-white rounded hover:bg-rust-200">
+        <button
+          className={`mt-4 md:text-[16px] text-[12px] px-4 py-2 bg-rust-100 ${
+            darkMode ? "text-gray-700" : "text-white"
+          }  rounded hover:bg-rust-200`}
+        >
           Read More
         </button>
       </div>
       <div
         className={`max-w-4xl p-6  shadow-lg rounded-lg my-2 justify-center
-         ${darkMode ? "bg-gray-800 text-white" : "bg-gray-100 text-black"}`}
+         ${
+           darkMode ? "bg-gray-800 text-gray-300" : "bg-gray-100 text-gray-700"
+         }`}
       >
-        <h2 className="text-lg font-semibold  mb-4 text-center">
+        <h2 className="text-lg  font-semibold  mb-4 text-center">
           Director's Note
         </h2>
         <div className="flex flex-col md:flex-row gap-4 items-center md:justify-start">
@@ -63,7 +71,7 @@ const WordsOfWisdom = () => {
           </div>
           {/* Content Section */}
           <div>
-            <p className=" mb-4 text-justify  line-clamp-[7]">
+            <p className=" mb-4 text-justify  line-clamp-[7] text-sm">
               Beloved Students and Respected Parents, Whole Hearted greeting to
               all my beloved students and their respected parents for choosing
               this SITM for their future building institution. This institution
@@ -86,7 +94,11 @@ const WordsOfWisdom = () => {
           </div>
         </div>
         {/* Read More Button */}
-        <button className="mt-4 px-4 py-2 bg-rust-100 text-white rounded hover:bg-rust-200">
+        <button
+          className={`mt-4 md:text-[16px] text-[12px] px-4 py-2 bg-rust-100 ${
+            darkMode ? "text-gray-700" : "text-white"
+          }  rounded hover:bg-rust-200`}
+        >
           Read More
         </button>
       </div>
