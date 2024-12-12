@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="bg-rust-200 text-white py-6">
       <div className="container mx-auto px-4 text-center">
         <p className="text-sm">
-          © {new Date().getFullYear()} Your Company Name. All rights reserved.
+          © {new Date().getFullYear()} Zaved Ali. All rights reserved.
         </p>
         <div className="mt-4 flex justify-center gap-4">
           <a

@@ -81,7 +81,15 @@ const Navbar = () => {
               className="hover:text-gray-300 mx-6"
               onClick={() => setDarkMode((prev) => !prev)}
             >
-              {darkMode ? <FaSun /> : <FaRegMoon />}
+              {darkMode ? (
+                <span className="hover:animate-spin">
+                  <FaSun />
+                </span>
+              ) : (
+                <span className="hover:animate-bounce">
+                  <FaRegMoon />
+                </span>
+              )}
             </a>
           )}
         </nav>
@@ -102,7 +110,9 @@ const Navbar = () => {
                 <FaSun />
               </span>
             ) : (
-              <FaRegMoon className="hover:animate-pulse" />
+              <span className="hover:animate-bounce">
+                <FaRegMoon />
+              </span>
             )}
           </a>
 
