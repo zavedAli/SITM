@@ -74,7 +74,9 @@ const FacilitiesCarousel = () => {
               />
               <div className="p-4 flex-grow">
                 <h3 className="text-lg font-bold  mb-2">{facility.title}</h3>
-                <p className="text-sm text-gray-400">{facility.description}</p>
+                <p className="text-sm text-gray-400 text-[11px] sm:text-[13px]">
+                  {facility.description}
+                </p>
               </div>
             </div>
           </SwiperSlide>

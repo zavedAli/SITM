@@ -27,7 +27,11 @@ const ApplyOnline = () => {
 
   return (
     <div className={`p-6  ${darkMode ? "bg-gray-800" : "bg-gray-100"}`}>
-      <h2 className="text-3xl font-semibold text-center text-gray-500 mb-6">
+      <h2
+        className={`text-3xl ${
+          darkMode ? "text-gray-100" : "text-gray-700"
+        } font-semibold text-center  mb-6`}
+      >
         Apply Online
       </h2>
       {isSubmitted ? (
@@ -40,7 +44,7 @@ const ApplyOnline = () => {
           onSubmit={handleSubmit}
           className={`max-w-lg mx-auto  p-6 rounded-lg shadow-lg ${
             darkMode ? "bg-gray-900 text-white" : "bg-white"
-          }`}
+          } text-[12px] md:text-[14px] lg:text-[16px]`}
         >
           <div className="mb-4">
             <label className="block  font-medium mb-2" htmlFor="name">
@@ -143,7 +147,9 @@ const ApplyOnline = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-rust-100 text-white py-2 px-4 rounded hover:bg-rust-200 transition duration-300"
+            className={`w-full bg-rust-100 ${
+              darkMode ? "text-gray-800" : "text-white"
+            } py-2 px-4 rounded hover:bg-rust-200 transition duration-300`}
           >
             Submit Application
           </button>

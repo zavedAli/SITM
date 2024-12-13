@@ -55,7 +55,7 @@ const RecentActivity = () => {
               </span>
             </div>
             <h3
-              className={`text-xl font-semibold text-gray-500 mb-2 ${
+              className={`text-xl font-semibold mb-2 ${
                 darkMode ? "text-gray-200" : "text-gray-600"
               }`}
             >

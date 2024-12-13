@@ -40,7 +40,11 @@ const MoU = () => {
         darkMode ? "bg-gray-800 text-gray-500" : ""
       }`}
     >
-      <h2 className="text-3xl font-semibold text-center text-gray-600 mb-6">
+      <h2
+        className={`text-3xl font-semibold text-center   ${
+          darkMode ? "text-gray-100" : "text-gray-700"
+        } mb-6`}
+      >
         Our MOU Partners
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
@@ -57,7 +61,11 @@ const MoU = () => {
               className="h-32 w-32 object-contain mb-4 bg-white px-5 rounded-full"
             />
             <div className="flex flex-col justify-center md:items-center ">
-              <h3 className="text-lg font-semibold  mb-2 text-gray-400">
+              <h3
+                className={`text-lg font-semibold  mb-2 ${
+                  darkMode ? "text-gray-100" : "text-gray-700"
+                }`}
+              >
                 {partner.name}
               </h3>
               <p className="text-sm md:text-center   text-gray-500">

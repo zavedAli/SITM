@@ -1,19 +1,28 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useRef, useEffect } from "react";
 import { IoMdClose } from "react-icons/io";
 import { TbMenuDeep } from "react-icons/tb";
 import Logo from "../../assets/logo-sitm.png";
-import { FaChevronDown } from "react-icons/fa";
-import { FaChevronUp } from "react-icons/fa";
-import { FaRegMoon } from "react-icons/fa";
-import { FaSun } from "react-icons/fa";
+import { FaChevronDown, FaChevronUp, FaRegMoon, FaSun } from "react-icons/fa";
 import { DarkModeContext } from "../../DarkModeContext";
-import { span } from "framer-motion/client";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { darkMode, setDarkMode } = useContext(DarkModeContext);
-  console.log(darkMode);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <header className="bg-rust-200 text-white shadow-md relative">
@@ -42,7 +51,7 @@ const Navbar = () => {
           </a>
 
           {/* Dropdown */}
-          <div className="relative">
+          <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               className="hover:text-gray-300 flex gap-1 items-center"
@@ -53,22 +62,26 @@ const Navbar = () => {
               </span>
             </button>
             {isDropdownOpen && (
-              <div className="absolute right-0 mt-2 w-40 bg-white text-black rounded-md shadow-lg z-40">
+              <div
+                className={`absolute right-0 mt-2 w-40 ${
+                  darkMode ? "bg-gray-800 text-gray-300" : "bg-white text-black"
+                } rounded-md shadow-lg z-40`}
+              >
                 <a
                   href="#admissions"
-                  className="block px-4 py-2 hover:bg-gray-100"
+                  className="block px-4 py-2 hover:scale-105 transition-all ease-in"
                 >
                   Admissions
                 </a>
                 <a
                   href="#placement"
-                  className="block px-4 py-2 hover:bg-gray-100"
+                  className="block px-4 py-2 hover:scale-105 transition-all ease-in"
                 >
                   Placement
                 </a>
                 <a
                   href="#enquiry"
-                  className="block px-4 py-2 hover:bg-gray-100"
+                  className="block px-4 py-2 hover:scale-105 transition-all ease-in"
                 >
                   Enquiry
                 </a>
@@ -95,8 +108,7 @@ const Navbar = () => {
         </nav>
 
         {/* Mobile Menu Button */}
-
-        <div className="flex gap-4 items-center md:hidden ">
+        <div className="flex gap-4 items-center md:hidden">
           <a
             href="#"
             className="hover:text-gray-300 md:hidden flex"

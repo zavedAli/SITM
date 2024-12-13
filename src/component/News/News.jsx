@@ -73,7 +73,9 @@ const News = () => {
       <div className="text-center mt-6">
         <a
           href="#more-news"
-          className="inline-block bg-rust-100 text-white px-4 py-2 rounded hover:bg-rust-200 transition duration-300"
+          className={`inline-block bg-rust-100  ${
+            darkMode ? "text-gray-900" : "text-white"
+          } px-4 py-2 rounded hover:bg-rust-200 transition duration-300`}
         >
           More News
         </a>

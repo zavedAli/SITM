@@ -1,0 +1,188 @@
+[
+  {
+    "question": "What is the primary programming language used for React?",
+    "options": ["JavaScript", "Python", "C++", "Ruby"],
+    "correct_answer": "JavaScript"
+  },
+  {
+    "question": "Which company developed React?",
+    "options": ["Facebook", "Google", "Apple", "Microsoft"],
+    "correct_answer": "Facebook"
+  },
+  {
+    "question": "What is the latest version of Node.js?",
+    "options": ["12.x", "14.x", "16.x", "18.x"],
+    "correct_answer": "18.x"
+  },
+
+  {
+    "question": "What does HTML stand for?",
+    "options": [
+      "Hyper Text Markup Language",
+      "High Text Markup Language",
+      "Hyper Transfer Markup Language",
+      "None of the above"
+    ],
+    "correct_answer": "Hyper Text Markup Language"
+  },
+  {
+    "question": "Which programming language is primarily used for Android app development?",
+    "options": ["Java", "Python", "Swift", "C#"],
+    "correct_answer": "Java"
+  },
+  {
+    "question": "What does HTTP stand for?",
+    "options": [
+      "HyperText Transfer Protocol",
+      "Hyper Transfer Text Protocol",
+      "Hyper Transfer Technology Protocol",
+      "None of the above"
+    ],
+    "correct_answer": "HyperText Transfer Protocol"
+  },
+  {
+    "question": "Which of the following is a cloud computing service?",
+    "options": ["AWS", "Google Docs", "Dropbox", "All of the above"],
+    "correct_answer": "All of the above"
+  },
+  {
+    "question": "What does API stand for in software development?",
+    "options": [
+      "Application Programming Interface",
+      "Application Program Interface",
+      "Application Program Initialization",
+      "None of the above"
+    ],
+    "correct_answer": "Application Programming Interface"
+  },
+  {
+    "question": "What language is primarily used for iOS app development?",
+    "options": ["Swift", "Java", "C", "Python"],
+    "correct_answer": "Swift"
+  },
+  {
+    "question": "Which one of these is an example of a relational database?",
+    "options": ["MySQL", "MongoDB", "Redis", "Cassandra"],
+    "correct_answer": "MySQL"
+  },
+  {
+    "question": "Which algorithm is commonly used for encrypting data?",
+    "options": ["AES", "SHA-1", "RSA", "All of the above"],
+    "correct_answer": "AES"
+  },
+  {
+    "question": "Which technology is used to make web pages interactive?",
+    "options": ["JavaScript", "HTML", "CSS", "SQL"],
+    "correct_answer": "JavaScript"
+  },
+  {
+    "question": "Which company developed the Linux operating system?",
+    "options": ["Microsoft", "Apple", "Linus Torvalds", "Google"],
+    "correct_answer": "Linus Torvalds"
+  },
+  {
+    "question": "What is the main purpose of Agile methodology?",
+    "options": [
+      "Project management",
+      "Team collaboration",
+      "Flexibility and iterative progress",
+      "All of the above"
+    ],
+    "correct_answer": "All of the above"
+  },
+  {
+    "question": "What is a key benefit of the Lean methodology?",
+    "options": [
+      "Minimizing waste",
+      "Increasing product complexity",
+      "Maximizing speed without quality checks",
+      "None of the above"
+    ],
+    "correct_answer": "Minimizing waste"
+  },
+  {
+    "question": "Which of the following is a tool used in project management?",
+    "options": ["Jira", "Trello", "Asana", "All of the above"],
+    "correct_answer": "All of the above"
+  },
+  {
+    "question": "What is Scrum?",
+    "options": [
+      "A project management framework",
+      "A programming language",
+      "A software development tool",
+      "None of the above"
+    ],
+    "correct_answer": "A project management framework"
+  },
+  {
+    "question": "What is the purpose of a Gantt chart?",
+    "options": [
+      "Project scheduling",
+      "Budget management",
+      "Resource allocation",
+      "All of the above"
+    ],
+    "correct_answer": "Project scheduling"
+  },
+  {
+    "question": "Which concept is used to divide a large project into manageable units in project management?",
+    "options": [
+      "Work Breakdown Structure",
+      "Agile Methodology",
+      "Lean Project Management",
+      "Critical Path Method"
+    ],
+    "correct_answer": "Work Breakdown Structure"
+  },
+  {
+    "question": "What is the primary goal of DevOps?",
+    "options": [
+      "Faster delivery of software",
+      "Increased security",
+      "Improved user interface",
+      "All of the above"
+    ],
+    "correct_answer": "Faster delivery of software"
+  },
+  {
+    "question": "What does MVP stand for in product management?",
+    "options": [
+      "Minimum Viable Product",
+      "Maximum Viable Product",
+      "Most Valuable Product",
+      "None of the above"
+    ],
+    "correct_answer": "Minimum Viable Product"
+  },
+  {
+    "question": "What is the definition of 'stakeholder' in a project?",
+    "options": [
+      "A person involved in the decision-making process",
+      "A person with financial interest in the project",
+      "A person or group affected by the project",
+      "All of the above"
+    ],
+    "correct_answer": "All of the above"
+  },
+  {
+    "question": "What is a primary role of a Scrum Master?",
+    "options": [
+      "Managing the project",
+      "Removing obstacles for the development team",
+      "Defining project requirements",
+      "None of the above"
+    ],
+    "correct_answer": "Removing obstacles for the development team"
+  },
+  {
+    "question": "What does 'OKR' stand for in business management?",
+    "options": [
+      "Objectives and Key Results",
+      "Objective Key Reports",
+      "Operational Key Results",
+      "None of the above"
+    ],
+    "correct_answer": "Objectives and Key Results"
+  }
+]

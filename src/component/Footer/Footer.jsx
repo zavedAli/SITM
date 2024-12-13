@@ -7,7 +7,7 @@ const Footer = () => {
         <p className="text-sm">
           © {new Date().getFullYear()} Zaved Ali. All rights reserved.
         </p>
-        <div className="mt-4 flex justify-center gap-4">
+        <div className="mt-4 flex justify-center gap-4 text-[12px] md:text-[14px] lg:text-[16px]">
           <a
             href="#"
             className="hover:text-gray-300 text-white transition-colors duration-200"
